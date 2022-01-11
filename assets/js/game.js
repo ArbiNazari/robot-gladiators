@@ -60,3 +60,4 @@ if (playerHealth <= 0) {
 else {
   window.alert(playerName + " still has " + playerHealth + " health left.");
 }
+var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
