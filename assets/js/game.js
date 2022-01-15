@@ -14,24 +14,25 @@ console.log(enemyNames[3]);
 
 // fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
-  while (playerHealth > 0 && enemyHealth > 0) 
+  while (playerHealth > 0 && enemyHealth > 0) {
     // ask player if they'd like to fight or run
     var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
 
- // if player picks "skip" confirm and then stop the loop
-if (promptFight === "skip" || promptFight === "SKIP") {
-  // confirm player wants to skip
-  var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    // if player picks "skip" confirm and then stop the loop
+    if (promptFight === "skip" || promptFight === "SKIP") {
+      // confirm player wants to skip
+      var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
-  // if yes (true), leave fight
-  if (confirmSkip) {
-    window.alert(playerName + " has decided to skip this fight. Goodbye!");
-    // subtract money from playerMoney for skipping
-    playerMoney = playerMoney - 10;
-    console.log("playerMoney", playerMoney)
-    break;
-  }
-}
+      // if yes (true), leave fight
+      if (confirmSkip) {
+        window.alert(playerName + ' has decided to skip this fight. Goodbye!');
+        // subtract money from playerMoney for skipping
+        playerMoney = playerMoney - 10;
+        console.log("playerMoney", playerMoney);
+        break;
+      
+      }
+    }
 
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
@@ -70,6 +71,12 @@ if (promptFight === "skip" || promptFight === "SKIP") {
 };
 
 // fight each enemy-robot by looping over them and fighting them one at a time
+if (playerHealth > 0) {
+  window.alert("Welcome to Robot Gladiators! Round " + ( i + 1 ));
+  var pickedEnemyName = enemyNames[i];git
+  enemyHealth = 50;
+  fight(pickedEnemyName);
+}
 for (var i = 0; i < enemyNames.length; i++) {
   // if player is still alive, keep fighting
   if (playerHealth > 0) {
